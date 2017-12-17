@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DynamicProgramming.KnapsackTask;
+using System;
 
 namespace ConsoleApp
 {
@@ -10,6 +7,20 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            var dynamic = new KnapsackInteger("input.txt");
+
+            if (dynamic.IsValidData)
+            {
+                dynamic.Calculating();
+
+                Console.WriteLine("Рассчет окончен.");
+            }
+            else
+            {
+                Console.WriteLine("Ошибка! Некорректные данные в файле или файл не удалось открыть.");
+            }
+
+            Console.ReadLine();
         }
     }
 }
